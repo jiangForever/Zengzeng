@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "获取你的赠赠卡";
+}
+
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">获取你的赠赠卡</div>
+</header>
+<div class="box aui-margin-b-10" id="formdata">
+    <div class="notice">
+        <div class="tit">赠赠说明</div>
+        <ul class="aui-list aui-media-list">
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon04.png" class="aui-list-img-sm" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        将卡片发送至社交平台，测试自己的个人魅力
+
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon05.png" class="aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        我们用小鱼干发4不会泄露你的寄送信息
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon06.png" class="aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        等待不期遇的惊喜<span style="color:#ee5b90; font-size:.8rem;"> ♥<span style=" position:relative; top:-3px;;"> ♥</span></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a href="#">查看详情</a>
+    </div>
+    <h2 class="aui-titlebar-title aui-margin-t-15">填写信息</h2>
+    <ul class="aui-list aui-media-list">
+        <li class="aui-list-item aui-list-item-middle">
+            <div class="aui-media-list-item-inner">
+                <div class="">
+                    <div class="aui-ellipsis" style=" padding:0 0 0 .5rem; color:#979797">
+                        头像
+                        <img src="~/asserts/image/img@4x.png" id="avatorImage" class="aui-img-round aui-list-img-sm" style="width:3.6rem; margin-left:2.3rem; display:inline; vertical-align:middle">
+                        <div class="avatar" style="display:none">
+                            <img width="150" height="150" id="result">
+                        </div>
+                        <input type="file" id="files2" accept="image/jpeg,image/png" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;opacity: 0;">
+                    </div>
+                    <div id="uploadFrame" class="upload_frame" style="display:none">
+                        <div class="act_box">
+                            <a href="javascript:void(0);" id="cancel" class="btn_cancel">取消</a>
+                            <a href="javascript:void(0);" id="clip">保存</a>
+                        </div>
+                        <div class="showframe" id="frame">
+                            <div class="showAll" id="preview"></div>
+                            <div class="showCase"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" aui-list-item-arrow ">&nbsp;</div>
+            </div>
+        </li>
+    </ul>
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">昵称</div>
+                <div class="aui-list-item-input "><input type="text" placeholder="请输入 1~5个字" id="nickname"></div>
+            </div>
+        </li>
+        <div class="taps">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media" style="width:2.4rem;">
+                            <img src="~/asserts/image/lock@4x.png" class="aui-list-img-sm">
+                        </div>
+                        <div class="aui-list-item-inner">
+                            我们会保护您的隐私信息，为您送礼物的人是无法看到的，您的寄送信息系统只会发给商品的商家，其他人无法看到
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+        </div>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">手机 </div>
+                <div class="aui-list-item-input"><input type="text" placeholder="用于收货联系" id="mobile"></div>
+            </div>
+        </li>
+
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">详细地址 </div>
+                <div class="aui-list-item-input">
+                    <textarea name="" cols="1" rows="2" placeholder="省市区/县 街道、门牌号" id="address"></textarea>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">身份证 </div>
+                <div class="aui-list-item-input"><input type="text" placeholder="选填，用于海淘" id="cardno"></div>
+            </div>
+        </li>
+    </ul>
+    <input type="hidden" id="ivatorValue" />
+    <input type="hidden" id="openid" value="@ViewBag.OpenId"/>
+</div>
+<footer class="aui-bar aui-bar-tab  footbtn" id="footer">生成</footer>
+
+
+<script src="~/asserts/js/home/index.js"></script>
+<script src="~/asserts/js/lib/base64upload.js"></script>
+<script src="~/asserts/js/lib/binaryajax.js"></script>
+<script src="~/asserts/js/lib/exif.js"></script>
+<script src="~/asserts/js/lib/hammer.min.js"></script>
+<script src="~/asserts/js/lib/jquery.make-thumb.js"></script>
+<script src="~/asserts/js/lib/megapix-image.js"></script>
+<script src="~/asserts/js/lib/photo.js"></script>
+<link href="~/asserts/css/zebra_dialog.css" rel="stylesheet" />
+<script src="~/asserts/js/lib/zebra_dialog.js"></script>
+<script type="text/javascript">
+    index.init();
+</script>

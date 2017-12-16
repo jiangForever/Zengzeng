@@ -1,0 +1,180 @@
+﻿@{
+    var user = ViewBag.User as Entity.User;
+    var goods = ViewBag.Goods as List<Entity.Goods>;
+    ViewBag.Title = user.NickName + "的赠赠";
+}
+<style>
+    img .select {
+        display: block;
+        background: url(../../asserts/image/select@4x.png);
+    }
+
+    img.default {
+        display: block;
+        background: url(../../asserts/image/default@4x.png);
+    }
+</style>
+
+<header class="aui-bar aui-bar-nav aui-margin-b-15">
+    <div class="aui-title">
+        <div class="aui-bar aui-bar-btn aui-bar-btn-round">
+            <div class="aui-bar-btn-item aui-active" tapmode="" data-item-order="0">@(user.NickName + "的赠赠")</div>
+            <div class="aui-bar-btn-item" tapmode="" data-item-order="1" id="toHome">获取你的赠赠卡</div>
+        </div>
+    </div>
+</header>
+<div class="box aui-margin-b-10">
+    <div class="notice">
+        <div class="tit">赠赠说明</div>
+        <ul class="aui-list aui-media-list">
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon01.png" class="aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        不用猜他的喜好，TA的愿望清单直接给你
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon02.png" class="aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        不用输入收货地址，只需时行下单付款的简单操作，就是要给TA买买买
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item aui-list-item-middle">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width: 2.4rem;">
+                        <img src="~/asserts/image/icon03.png" class="aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        送出惊喜，获得他的好感度<span style="color:#ee5b90; font-size:.8rem;"> ↑<span style=" position:relative; top:-3px;;"> ↑</span></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a href="#">查看详情</a>
+    </div>
+    <h2 class="aui-titlebar-title ">公告</h2>
+    <div class="pordlist">
+        <ul class="aui-row aui-row-padded">
+            @foreach (var item in goods)
+            {
+                <li class="aui-col-xs-6">
+                    <div class="pordnav">
+                        <div class="imgbox">
+                            <img src="@("/Image/"+item.Pictures[0].PictureUrl)" style="width:173px;height:173px;">
+                            @if (!string.IsNullOrEmpty(item.Source))
+                            {
+                                <span>本商品由 @item.Source 代发货</span>
+                            }
+                        </div>
+                        <p class="p1">
+                            <span class="aui-pull-left">@item.Title</span>
+                            <span class="aui-pull-right">￥@item.Price</span>
+                        </p>
+                        <p class="p2">
+                            <span class="aui-pull-left">@item.SubTitle</span>
+                            <span class="aui-pull-right select"><img class="default choose"></span>
+                        </p>
+
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <h2 class="aui-titlebar-title aui-margin-t-15">留言（必填）</h2>
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">署名</div>
+                <div class="aui-list-item-input"><input type="text" placeholder="不填为匿名"></div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">留言</div>
+                <div class="aui-list-item-input"><input type="text" placeholder="给克里斯蒂安"></div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">备注</div>
+                <div class="aui-list-item-input">
+                    <textarea name="" cols="1" rows="2" placeholder="给赠赠"></textarea>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-clearfix footbox">
+        <ul class="aui-row aui-row-padded box">
+            <li class="aui-col-xs-7">
+                <div class="pr">
+                    $350<span>共2件</span>
+                </div>
+            </li>
+            <li class="aui-col-xs-5">
+                <div class="aui-btn aui-btn-primary aui-btn-block" aui-popup-for="top-right">为ta购买</div>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+<div class="aui-popup popup_center" id="top-right">
+    <div class="aui-popup-close  close_pop"><i class="aui-iconfont aui-icon-close"></i></div>
+    <div class="aui-popup-content">
+
+
+        <div class="aui-margin-l-15 aui-margin-r-15">
+            <div class="aui-text-center aui-padded-t-15 aui-border-b">
+                <p>需要支付</p>
+                <h1 class="pay_h1">￥350.00</h1>
+            </div>
+            <ul class="aui-list aui-select-list payfor">
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner aui-list-item-arrow">
+                        <label><img src="~/asserts/image/weixin@4x.png">财币支付</label>
+                    </div>
+                </li>
+
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner aui-list-item-arrow">
+                        <label><img src="~/asserts/image/alipay@4x.png">微信支付</label>
+                    </div>
+                </li>
+            </ul>
+        </div><br>
+    </div>
+</div>
+<script type="text/javascript">
+    var popup = new auiPopup();
+    function showPopup() {
+        popup.show(document.getElementById("top-right"))
+    }
+
+    function aaa() {
+        $(".popup_center").each(function () {
+            var pophei = $(this).height()
+            $(this).css({ marginTop: -pophei / 2 })
+        })
+    }
+    aaa()
+
+    $(function () {
+        $("#toHome").click(function () {
+            location.href = "/";
+        });
+    });
+
+</script>

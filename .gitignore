@@ -1,0 +1,8 @@
+*.dll
+*.pdb
+packages
+debug
+release
+obj
+PublishProfiles
+Image

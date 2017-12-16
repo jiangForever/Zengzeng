@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link href="~/assert/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/assert/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assert/css/jquery.paginate.css" rel="stylesheet" />
+<link href="~/assert/css/jquery.yhhDataTable.css" rel="stylesheet" />
+<script src="~/assert/js/jquery.min.js"></script>
+<script src="~/assert/js/jquery.paginate.js"></script>
+<script src="~/assert/js/jquery.yhhDataTable.js"></script>
+<script src="~/assert/js/user/index.js"></script>
+<script src="~/assert/js/bootstrap.min.js"></script>
+
+<div>
+    <div style="width:980px;margin:20px auto;" class="form-group form-horizontal ">
+        <label for="userid" class="col-sm-1 control-label">  ID:</label>
+        <div class="col-sm-3">
+            <input type="text" id="userid" name="userid" class="form-control " placeholder="请输入ID" />
+        </div>
+        <label for="mobile" class="col-sm-2 control-label">     电话号码:</label>
+        <div class="col-sm-3">
+            <input type="text" id="mobile" name="mobile" class="form-control" placeholder="请输入手机号码" />
+        </div>
+        <input type="button" value="查询" id="search" class="btn btn-default" />
+    </div>
+
+    <div style="width:980px;margin:20px auto;">
+        <table id="testtable5" class="yhh-data-table end-view-btn">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>电话</th>
+                    <th>身份证</th>
+                    <th>地址</th>
+                    <th>头像</th>
+                    <th>生成时间</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        请输入备注
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <textarea cols="78" rows="5" ></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        提交更改
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

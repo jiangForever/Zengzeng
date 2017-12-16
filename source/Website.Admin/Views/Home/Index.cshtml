@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "登录";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!--必要样式-->
+    <link href="~/assert/css/default.css" rel="stylesheet" />
+    <link href="~/assert/css/demo.css" rel="stylesheet" />
+    <link href="~/assert/css/layui.css" rel="stylesheet" />
+    <link href="~/assert/css/loaders.css" rel="stylesheet" />
+    <link href="~/assert/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login">
+        <form action="/home/doLogin" method="post">
+            <div class="login_title">
+                <span>管理员登录</span>
+            </div>
+            <div class="login_fields">
+                <div class="login_fields__user">
+                    <div class="icon">
+                        <img alt="" src="~/assert/image/user_icon_copy.png">
+                    </div>
+                    <input name="userName" placeholder="用户名" maxlength="16" type="text" autocomplete="off" value="">
+                    <div class="validation">
+                        <img alt="" src="~/assert/image/tick.png">
+                    </div>
+                </div>
+                <div class="login_fields__password">
+                    <div class="icon">
+                        <img alt="" src="~/assert/image/lock_icon_copy.png">
+                    </div>
+                    <input name="password" placeholder="密码" maxlength="16" type="password" autocomplete="off">
+                    <div class="validation">
+                        <img alt="" src="~/assert/image/tick.png">
+                    </div>
+                </div>
+                <div class="login_fields__submit">
+                    <input type="submit" value="登录" id="login">
+                </div>
+            </div>
+            <div class="success">
+            </div>
+            <div class="disclaimer">
+                <p>欢迎登陆赠赠网后台管理系统</p>
+            </div>
+        </form>
+    </div>
+    <div class="authent">
+        <div class="loader" style="height: 44px;width: 44px;margin-left: 28px;">
+            <div class="loader-inner ball-clip-rotate-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <p>认证中...</p>
+    </div>
+    <div class="OverWindows"></div>
+    <script src="~/assert/js/home/index.js"></script>
+    <script type="text/javascript">
+        index.init();
+    </script>
+</body>
+</html>

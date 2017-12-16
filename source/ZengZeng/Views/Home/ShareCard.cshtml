@@ -1,0 +1,24 @@
+﻿@{
+    var user = Model as Entity.User;
+    ViewBag.Title = user.NickName + "的赠赠卡";
+}
+
+
+<header class="aui-bar aui-bar-nav">
+    <a class="aui-pull-left aui-btn"><span class="aui-iconfont aui-icon-left"></span></a>
+    <div class="aui-title">chirs的赠赠卡</div>
+</header>
+<div class="box">
+    <div class="card">
+        <img src="/Card/ShareImage?unique=@user.Unique" />
+        <h1>长按保存你的赠赠卡</h1>
+        <p>
+            小贴士：<br>
+            保存图片到相册，可以分享到自己的社交平台，也许会有小惊喜哦
+        </p>
+        <ol>
+            关注微信公众号“赠赠”获取更多信息，
+            也可留言想要的产品，客服尽快增加
+        </ol>
+    </div>
+</div>

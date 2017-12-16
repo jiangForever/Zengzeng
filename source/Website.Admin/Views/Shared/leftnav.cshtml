@@ -1,0 +1,21 @@
+﻿<div class="account-l fl" style="width:200px;float:left">
+    <a class="list-title">赠赠网</a>
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link"><i class="fa fa-leaf"></i>管理<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu" style="display: block;">
+                <li id="shop" data-href="/user/index"><a>用户管理</a></li>
+                <li id="publishpurchase"><a>订单管理</a></li>
+                <li id="buyerxunpanlist"  data-href="/goods/index"><a>商品管理</a></li>
+                <li id="myorder"><a>发货管理</a></li>
+                <li id="myloan"><a>退出登录</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    $("#accordion").on("click", "ul li", function () {
+        location.href = $(this).attr("data-href");
+    });
+
+</script>

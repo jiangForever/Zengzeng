@@ -1,0 +1,4 @@
+﻿; var index = {
+    init: function () {
+    }
+};
